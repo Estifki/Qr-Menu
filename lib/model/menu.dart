@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class MenuCategory {
   final String name;
   final List<MenuItem> items;
