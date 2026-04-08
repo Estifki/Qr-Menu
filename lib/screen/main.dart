@@ -65,8 +65,13 @@ class _MenuPageState extends State<MenuPage> {
       body: SafeArea(
         child: ListView(
           children: [
-            const SizedBox(height: 20),
-
+            const SizedBox(height: 40),
+            Image.asset(
+              "lib/assets/logo.png",
+              height: 100,
+              color: Colors.white,
+            ),
+            SizedBox(height: 20),
             const Center(
               child: Text(
                 "Our Menu",

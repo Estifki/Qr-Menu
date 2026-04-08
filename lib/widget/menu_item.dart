@@ -17,20 +17,6 @@ Widget buildMenuItem(MenuItem item) {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        item.image != null && item.image != ""
-            ? ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  item.image,
-                  height: 160,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              )
-            : SizedBox.shrink(),
-
-        const SizedBox(height: 12),
-
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -63,7 +49,7 @@ Widget buildMenuItem(MenuItem item) {
         const SizedBox(height: 6),
 
         Text(
-          item.description,
+          item.description ?? "",
           style: const TextStyle(color: AppColors.textSecondary, fontSize: 14),
         ),
 
@@ -71,13 +57,15 @@ Widget buildMenuItem(MenuItem item) {
 
         Row(
           children: [
-            Text(
-              "${item.kcal} KCAL",
-              style: const TextStyle(
-                color: AppColors.textSecondary,
-                fontSize: 12,
-              ),
-            ),
+            item.kcal == null || item.kcal == ""
+                ? SizedBox.shrink()
+                : Text(
+                    "${item.kcal} KCAL",
+                    style: const TextStyle(
+                      color: AppColors.textSecondary,
+                      fontSize: 12,
+                    ),
+                  ),
 
             const Spacer(),
 
@@ -98,6 +86,18 @@ Widget buildMenuItem(MenuItem item) {
               ),
           ],
         ),
+        SizedBox(height: 10),
+        item.image != null && item.image != ""
+            ? ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  item.image,
+                  height: 160,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              )
+            : SizedBox.shrink(),
       ],
     ),
   );

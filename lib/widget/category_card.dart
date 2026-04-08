@@ -5,42 +5,30 @@ import 'package:qr_menu/widget/menu_item.dart';
 import '../model/menu.dart';
 
 class CategoryCardWidget extends StatefulWidget {
-
   final MenuCategory category;
 
-  const CategoryCardWidget({
-    super.key,
-    required this.category,
-  });
+  const CategoryCardWidget({super.key, required this.category});
 
   @override
-  State<CategoryCardWidget> createState()
-      => _CategoryCardWidgetState();
+  State<CategoryCardWidget> createState() => _CategoryCardWidgetState();
 }
 
-class _CategoryCardWidgetState
-    extends State<CategoryCardWidget> {
-
+class _CategoryCardWidgetState extends State<CategoryCardWidget> {
   bool isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
-
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      margin: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 8),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       decoration: BoxDecoration(
         color: AppColors.card,
         borderRadius: BorderRadius.circular(16),
-        border:
-            Border.all(color: AppColors.divider),
+        border: Border.all(color: AppColors.divider),
       ),
       child: Column(
         children: [
-
-          InkWell(
+          GestureDetector(
             onTap: () {
               setState(() {
                 isExpanded = !isExpanded;
@@ -50,9 +38,6 @@ class _CategoryCardWidgetState
               padding: const EdgeInsets.all(18),
               child: Row(
                 children: [
-
-                 
-
                   Expanded(
                     child: Text(
                       widget.category.name,
@@ -65,15 +50,9 @@ class _CategoryCardWidgetState
                   ),
 
                   AnimatedRotation(
-                    duration:
-                        const Duration(
-                            milliseconds: 250),
-                    turns:
-                        isExpanded ? 0.5 : 0,
-                    child: const Icon(
-                      Icons.expand_more,
-                      color: Colors.white,
-                    ),
+                    duration: const Duration(milliseconds: 250),
+                    turns: isExpanded ? 0.5 : 0,
+                    child: const Icon(Icons.expand_more, color: Colors.white),
                   ),
                 ],
               ),
@@ -81,14 +60,10 @@ class _CategoryCardWidgetState
           ),
 
           AnimatedSwitcher(
-            duration:
-                const Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 300),
             child: isExpanded
                 ? Column(
-                    children: widget
-                        .category.items
-                        .map(buildMenuItem)
-                        .toList(),
+                    children: widget.category.items.map(buildMenuItem).toList(),
                   )
                 : const SizedBox(),
           ),
