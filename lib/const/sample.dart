@@ -29,7 +29,7 @@ const sampleCategories = [
       MenuItem(
         name: "Lungo",
         description: "A longer espresso with more water for a milder flavor.",
-
+        image: "lib/assets/lungo.jpg",
         price: 140,
         kcal: 5,
       ),
@@ -37,7 +37,7 @@ const sampleCategories = [
         name: "Turkish Coffee",
         description:
             "Turkish style coffee brewed with finely ground coffee and cardamom.",
-
+        image: "lib/assets/tur.jpg",
         price: 140,
         kcal: 5,
       ),
@@ -70,6 +70,7 @@ const sampleCategories = [
         name: "Black Tea",
         price: 60,
         description: "Classic Ethiopian black tea.",
+        image: "lib/assets/tea.png",
         kcal: 2,
       ),
 
@@ -77,6 +78,7 @@ const sampleCategories = [
         name: "Milk Tea",
         price: 70,
         description: "Tea served with fresh milk.",
+        image: "lib/assets/milk.jpg",
         kcal: 40,
       ),
 
@@ -84,6 +86,7 @@ const sampleCategories = [
         name: "Special Tea",
         price: 90,
         description: "Tea with cinnamon, ginger, and cardamom.",
+
         kcal: 45,
       ),
 
@@ -91,6 +94,7 @@ const sampleCategories = [
         name: "Lemon Tea",
         price: 80,
         description: "Hot tea served with fresh lemon.",
+        image: "lib/assets/lemon.jpg",
         kcal: 10,
       ),
 
@@ -98,6 +102,7 @@ const sampleCategories = [
         name: "Green Tea",
         price: 85,
         description: "Healthy green tea.",
+        image: "lib/assets/green.jpg",
         kcal: 3,
       ),
     ],
@@ -134,6 +139,7 @@ const sampleCategories = [
         name: "Mango Juice",
         price: 180,
         description: "Fresh blended mango juice.",
+        image: "lib/assets/manjo.jpg",
         kcal: 150,
       ),
 
@@ -141,6 +147,7 @@ const sampleCategories = [
         name: "Avocado Juice",
         price: 200,
         description: "Creamy avocado blended with milk.",
+        image: "lib/assets/avo.jpg",
         kcal: 220,
       ),
 
@@ -176,6 +183,7 @@ const sampleCategories = [
         name: "Beef Burger",
         price: 420,
         description: "Juicy beef burger with fresh vegetables.",
+        image: "lib/assets/beef.jpg",
         kcal: 520,
       ),
 
@@ -191,6 +199,7 @@ const sampleCategories = [
         name: "Cheese Burger",
         price: 450,
         description: "Beef burger topped with melted cheese.",
+        image: "lib/assets/beef.jpg",
         kcal: 560,
       ),
 
@@ -198,6 +207,8 @@ const sampleCategories = [
         name: "Double Burger",
         price: 520,
         description: "Double beef patty burger.",
+
+        image: "lib/assets/dou.jpg",
         kcal: 720,
       ),
 
