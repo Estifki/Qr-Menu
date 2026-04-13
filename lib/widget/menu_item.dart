@@ -1,18 +1,17 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:qr_menu/const/theme.dart';
 import 'package:qr_menu/model/menu.dart';
-
-import '../const/theme.dart';
 
 Widget buildMenuItem(MenuItem item) {
   return Container(
     margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
     padding: const EdgeInsets.all(14),
     decoration: BoxDecoration(
-      color: Colors.black,
       borderRadius: BorderRadius.circular(14),
-      border: Border.all(color: AppColors.divider),
+      color: AppColors.gradientColorTwo.withOpacity(0.5),
     ),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +23,6 @@ Widget buildMenuItem(MenuItem item) {
               child: Text(
                 item.name,
                 style: const TextStyle(
-                  color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
@@ -38,7 +36,7 @@ Widget buildMenuItem(MenuItem item) {
                 //     ? TextDecoration.lineThrough
                 //     : null,
                 // decorationColor: Colors.red,
-                color: AppColors.accent,
+                color: const Color.fromARGB(255, 19, 144, 23),
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
@@ -50,21 +48,18 @@ Widget buildMenuItem(MenuItem item) {
 
         Text(
           item.description ?? "",
-          style: const TextStyle(color: AppColors.textSecondary, fontSize: 14),
+          style: const TextStyle(fontSize: 14, height: 1.1),
         ),
 
         const SizedBox(height: 8),
 
         Row(
           children: [
-            item.kcal == null || item.kcal == ""
+            item.calories == null || item.calories == ""
                 ? SizedBox.shrink()
                 : Text(
-                    "${item.kcal} KCAL",
-                    style: const TextStyle(
-                      color: AppColors.textSecondary,
-                      fontSize: 12,
-                    ),
+                    "${item.calories} KCAL",
+                    style: const TextStyle(fontSize: 12),
                   ),
 
             const Spacer(),
@@ -90,8 +85,8 @@ Widget buildMenuItem(MenuItem item) {
         item.image != null && item.image != ""
             ? ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  item.image,
+                child: CachedNetworkImage(
+                  imageUrl: item.image!,
                   height: 160,
                   width: double.infinity,
                   fit: BoxFit.cover,

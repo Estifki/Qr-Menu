@@ -24,7 +24,6 @@ class _CategoryCardWidgetState extends State<CategoryCardWidget> {
       decoration: BoxDecoration(
         color: AppColors.card,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.divider),
       ),
       child: Column(
         children: [
@@ -42,7 +41,6 @@ class _CategoryCardWidgetState extends State<CategoryCardWidget> {
                     child: Text(
                       widget.category.name,
                       style: const TextStyle(
-                        color: AppColors.accent,
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                       ),
@@ -52,7 +50,7 @@ class _CategoryCardWidgetState extends State<CategoryCardWidget> {
                   AnimatedRotation(
                     duration: const Duration(milliseconds: 250),
                     turns: isExpanded ? 0.5 : 0,
-                    child: const Icon(Icons.expand_more, color: Colors.white),
+                    child: const Icon(Icons.expand_more),
                   ),
                 ],
               ),

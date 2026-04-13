@@ -8,13 +8,14 @@ Widget buildSearchBar(TextEditingController controller) {
     padding: const EdgeInsets.symmetric(horizontal: 20),
     height: 52,
     decoration: BoxDecoration(
-      color: AppColors.card,
+      // ignore: deprecated_member_use
+      color: AppColors.card.withOpacity(0.2),
       borderRadius: BorderRadius.circular(14),
-      border: Border.all(color: AppColors.divider),
+      border: Border.all(color: AppColors.card, width: 2),
     ),
     child: Row(
       children: [
-        const Icon(Icons.search, color: AppColors.textSecondary),
+        const Icon(Icons.search, color: Colors.white),
 
         const SizedBox(width: 12),
 
@@ -22,9 +23,10 @@ Widget buildSearchBar(TextEditingController controller) {
           child: TextField(
             controller: controller,
             style: const TextStyle(color: Colors.white),
+
             decoration: const InputDecoration(
               hintText: "Search menu...",
-              hintStyle: TextStyle(color: AppColors.textSecondary),
+              hintStyle: TextStyle(color: Colors.white),
               border: InputBorder.none,
             ),
           ),
