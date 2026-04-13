@@ -14,7 +14,7 @@ class CategoryCardWidget extends StatefulWidget {
 }
 
 class _CategoryCardWidgetState extends State<CategoryCardWidget> {
-  bool isExpanded = false;
+  bool isExpanded = true;
 
   @override
   Widget build(BuildContext context) {
