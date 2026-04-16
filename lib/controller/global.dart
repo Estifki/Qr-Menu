@@ -60,14 +60,13 @@ class GlobalProvider with ChangeNotifier {
             MenuCategory(
               id: catId,
               name: categoryMap['categoryName'] ?? "",
+              order: categoryMap["order"],
               items: items,
             ),
           );
         });
 
-        /// 🔥 SORTING (optional)
-        _items = _items.reversed.toList();
-        _categories = _categories.reversed.toList();
+        _categories.sort((a, b) => a.order.compareTo(b.order));
 
         notifyListeners();
       } else {

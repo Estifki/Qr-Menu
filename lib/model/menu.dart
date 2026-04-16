@@ -2,11 +2,13 @@
 class MenuCategory {
   final String id;
   final String name;
+  final int order;
   final List<MenuItem> items;
 
   MenuCategory({
     required this.id,
     required this.name,
+    required this.order,
     this.items = const [],
   });
 }

@@ -52,6 +52,7 @@ class _MenuPageState extends State<MenuPage> {
           return MenuCategory(
             id: category.id,
             name: category.name,
+            order: category.order,
             items: filteredItems,
           );
         })
@@ -75,7 +76,12 @@ class _MenuPageState extends State<MenuPage> {
             }
 
             if (snapshot.hasError) {
-              return const Center(child: Text("Failed to load menu"));
+              return const Center(
+                child: Text(
+                  "Check Your Internet Connection\nIf Error Persists Contact Admin.",
+                  textAlign: TextAlign.center,
+                ),
+              );
             }
 
             /// 🔥 GET DATA FROM PROVIDER
